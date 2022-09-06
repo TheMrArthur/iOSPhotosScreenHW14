@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		EC5481F428C716EF00F35FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5481F328C716EF00F35FA2 /* AppDelegate.swift */; };
 		EC5481F628C716EF00F35FA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5481F528C716EF00F35FA2 /* SceneDelegate.swift */; };
-		EC5481F828C716EF00F35FA2 /* AlbumsLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5481F728C716EF00F35FA2 /* AlbumsLayoutViewController.swift */; };
+		EC5481F828C716EF00F35FA2 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5481F728C716EF00F35FA2 /* AlbumsViewController.swift */; };
 		EC5481FD28C716F100F35FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC5481FC28C716F100F35FA2 /* Assets.xcassets */; };
-		EC54820D28C71DE100F35FA2 /* PhotosLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54820C28C71DE100F35FA2 /* PhotosLayoutViewController.swift */; };
-		EC54820F28C71DFE00F35FA2 /* ForYouLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54820E28C71DFE00F35FA2 /* ForYouLayoutViewController.swift */; };
-		EC54821128C71E1600F35FA2 /* SearchLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54821028C71E1600F35FA2 /* SearchLayoutViewController.swift */; };
+		EC54820D28C71DE100F35FA2 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54820C28C71DE100F35FA2 /* PhotosViewController.swift */; };
+		EC54820F28C71DFE00F35FA2 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54820E28C71DFE00F35FA2 /* ForYouViewController.swift */; };
+		EC54821128C71E1600F35FA2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54821028C71E1600F35FA2 /* SearchViewController.swift */; };
+		EC54821628C797E300F35FA2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54821528C797E300F35FA2 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC5481F028C716EF00F35FA2 /* iOSPhotosScreenHW14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPhotosScreenHW14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5481F328C716EF00F35FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC5481F528C716EF00F35FA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC5481F728C716EF00F35FA2 /* AlbumsLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsLayoutViewController.swift; sourceTree = "<group>"; };
+		EC5481F728C716EF00F35FA2 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		EC5481FC28C716F100F35FA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC54820128C716F100F35FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC54820C28C71DE100F35FA2 /* PhotosLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosLayoutViewController.swift; sourceTree = "<group>"; };
-		EC54820E28C71DFE00F35FA2 /* ForYouLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouLayoutViewController.swift; sourceTree = "<group>"; };
-		EC54821028C71E1600F35FA2 /* SearchLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLayoutViewController.swift; sourceTree = "<group>"; };
+		EC54820C28C71DE100F35FA2 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		EC54820E28C71DFE00F35FA2 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
+		EC54821028C71E1600F35FA2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EC54821528C797E300F35FA2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				EC54820A28C718E200F35FA2 /* App */,
-				EC54820B28C71A1E00F35FA2 /* Layouts */,
+				EC54820B28C71A1E00F35FA2 /* Controllers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -99,15 +101,16 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		EC54820B28C71A1E00F35FA2 /* Layouts */ = {
+		EC54820B28C71A1E00F35FA2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC54820C28C71DE100F35FA2 /* PhotosLayoutViewController.swift */,
-				EC54820E28C71DFE00F35FA2 /* ForYouLayoutViewController.swift */,
-				EC5481F728C716EF00F35FA2 /* AlbumsLayoutViewController.swift */,
-				EC54821028C71E1600F35FA2 /* SearchLayoutViewController.swift */,
+				EC54821528C797E300F35FA2 /* TabBarController.swift */,
+				EC54820C28C71DE100F35FA2 /* PhotosViewController.swift */,
+				EC54820E28C71DFE00F35FA2 /* ForYouViewController.swift */,
+				EC5481F728C716EF00F35FA2 /* AlbumsViewController.swift */,
+				EC54821028C71E1600F35FA2 /* SearchViewController.swift */,
 			);
-			path = Layouts;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC5481F828C716EF00F35FA2 /* AlbumsLayoutViewController.swift in Sources */,
+				EC5481F828C716EF00F35FA2 /* AlbumsViewController.swift in Sources */,
 				EC5481F428C716EF00F35FA2 /* AppDelegate.swift in Sources */,
-				EC54820D28C71DE100F35FA2 /* PhotosLayoutViewController.swift in Sources */,
+				EC54820D28C71DE100F35FA2 /* PhotosViewController.swift in Sources */,
 				EC5481F628C716EF00F35FA2 /* SceneDelegate.swift in Sources */,
-				EC54821128C71E1600F35FA2 /* SearchLayoutViewController.swift in Sources */,
-				EC54820F28C71DFE00F35FA2 /* ForYouLayoutViewController.swift in Sources */,
+				EC54821128C71E1600F35FA2 /* SearchViewController.swift in Sources */,
+				EC54820F28C71DFE00F35FA2 /* ForYouViewController.swift in Sources */,
+				EC54821628C797E300F35FA2 /* TabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
