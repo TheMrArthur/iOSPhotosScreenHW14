@@ -19,6 +19,7 @@
 		EC54821C28C7E36200F35FA2 /* BigImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54821B28C7E36200F35FA2 /* BigImageCell.swift */; };
 		EC54821E28C7EBB100F35FA2 /* AlbumsViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54821D28C7EBB100F35FA2 /* AlbumsViewController+Extension.swift */; };
 		EC54822028C7FC3E00F35FA2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54821F28C7FC3E00F35FA2 /* TableCell.swift */; };
+		EC54822228C80C3800F35FA2 /* CellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC54822128C80C3800F35FA2 /* CellHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EC54821B28C7E36200F35FA2 /* BigImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigImageCell.swift; sourceTree = "<group>"; };
 		EC54821D28C7EBB100F35FA2 /* AlbumsViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlbumsViewController+Extension.swift"; sourceTree = "<group>"; };
 		EC54821F28C7FC3E00F35FA2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		EC54822128C80C3800F35FA2 /* CellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				EC54821B28C7E36200F35FA2 /* BigImageCell.swift */,
 				EC54821F28C7FC3E00F35FA2 /* TableCell.swift */,
+				EC54822128C80C3800F35FA2 /* CellHeader.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC54822228C80C3800F35FA2 /* CellHeader.swift in Sources */,
 				EC5481F828C716EF00F35FA2 /* AlbumsViewController.swift in Sources */,
 				EC54821A28C7B19800F35FA2 /* AlbumsModel.swift in Sources */,
 				EC54821C28C7E36200F35FA2 /* BigImageCell.swift in Sources */,
