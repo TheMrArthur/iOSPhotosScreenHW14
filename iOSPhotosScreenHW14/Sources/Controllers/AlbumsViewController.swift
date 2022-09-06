@@ -9,10 +9,71 @@ import UIKit
 
 class AlbumsViewController: UIViewController {
 
+    var setupAlbumsController: Model?
+
+    // MARK: - UI Elements
+
+    private lazy var collectionView: UICollectionView = {
+        let layout = createLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(BigImageCell.self, forCellWithReuseIdentifier: BigImageCell.identifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
+    }()
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Albums"
+        title = "Альбомы"
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        setupHierarchy()
+        setupLayout()
+    }
+
+    // MARK: - Setup
+
+    private func setupHierarchy() {
+        view.addSubview(collectionView)
+    }
+
+    private func setupLayout() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
+    func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout {_,_ in 
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                  heightDimension: .fractionalHeight(0.8))
+
+            let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+            layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5,
+                                                               leading: 15,
+                                                               bottom: 10,
+                                                               trailing: 0)
+
+            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200),
+                                                   heightDimension: .absolute(480))
+
+            let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+                                                               subitem: layoutItem,
+                                                               count: 2)
+
+            let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+            layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 10,
+                                                                  leading: 5,
+                                                                  bottom: 10,
+                                                                  trailing: 15)
+            layoutSection.orthogonalScrollingBehavior = .continuous
+            return layoutSection
+        }
     }
 }
