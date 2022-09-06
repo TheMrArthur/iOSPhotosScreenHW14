@@ -9,7 +9,7 @@ import UIKit
 
 class BigImageCell: UICollectionViewCell {
 
-    static let identifier = "bigImageCell"
+    static let bigImageCellIdentifier = "bigImageCell"
 
     var setupCell: Model? {
         didSet {
@@ -22,11 +22,11 @@ class BigImageCell: UICollectionViewCell {
     // MARK: - UI Elements
 
     private lazy var image: UIImageView = {
-        let imageView = UIImageView()
-        imageView.layer.cornerRadius = 5
-        imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
-        return imageView
+        let image = UIImageView()
+        image.layer.cornerRadius = 5
+        image.contentMode = .scaleToFill
+        image.clipsToBounds = true
+        return image
     }()
 
     lazy var textLabel: UILabel = {
