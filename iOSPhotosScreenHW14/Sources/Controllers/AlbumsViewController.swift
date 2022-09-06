@@ -18,6 +18,9 @@ class AlbumsViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(BigImageCell.self, forCellWithReuseIdentifier: BigImageCell.bigImageCellIdentifier)
         collectionView.register(TableCell.self, forCellWithReuseIdentifier: TableCell.tableCellIdentifier)
+        collectionView.register(CellHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: CellHeader.cellHeaderIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -77,6 +80,17 @@ class AlbumsViewController: UIViewController {
                                                                           bottom: 10,
                                                                           trailing: 15)
                     layoutSection.orthogonalScrollingBehavior = .continuous
+
+                    let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.06),
+                                                                         heightDimension: .estimated(40))
+
+                    let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                        layoutSize: layoutSectionHeaderSize,
+                        elementKind: UICollectionView.elementKindSectionHeader,
+                        alignment: .top)
+                    layoutSectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0)
+
+                    layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                     return layoutSection
                     
                 case 1:
@@ -102,6 +116,16 @@ class AlbumsViewController: UIViewController {
                                                                           bottom: 10,
                                                                           trailing: 15)
                     layoutSection.orthogonalScrollingBehavior = .continuous
+
+                    let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.06),
+                                                                         heightDimension: .estimated(40))
+
+                    let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                        layoutSize: layoutSectionHeaderSize,
+                        elementKind: UICollectionView.elementKindSectionHeader,
+                        alignment: .top)
+                    layoutSectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0)
+                    layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                     return layoutSection
                     
                 default:
@@ -126,6 +150,16 @@ class AlbumsViewController: UIViewController {
                                                                           leading: 5,
                                                                           bottom: 30,
                                                                           trailing: 10)
+
+                    let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.06),
+                                                                         heightDimension: .estimated(40))
+
+                    let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                        layoutSize: layoutSectionHeaderSize,
+                        elementKind: UICollectionView.elementKindSectionHeader,
+                        alignment: .top)
+                    layoutSectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0)
+                    layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                     return layoutSection
             }
         }

@@ -37,4 +37,24 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
                 return cell
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CellHeader.cellHeaderIdentifier, for: indexPath) as? CellHeader else {
+            return UICollectionReusableView()
+        }
+        switch indexPath.section {
+            case 0:
+                header.leftTitle.text = "Мои альбомы"
+                header.rightTitle.text = "Все"
+            case 1:
+                header.leftTitle.text = "Общие альбомы"
+            case 2:
+                header.leftTitle.text = "Типы медиафайлов"
+            case 3:
+                header.leftTitle.text = "Другое"
+            default:
+                header.leftTitle.text = "Чейта за секция?"
+        }
+        return header
+    }
 }
