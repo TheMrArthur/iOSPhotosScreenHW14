@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "compression-type" : "automatic",
+      "filename" : "photo1.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
