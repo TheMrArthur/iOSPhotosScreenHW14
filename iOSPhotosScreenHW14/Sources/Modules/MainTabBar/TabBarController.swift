@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         setupTabBarViewControllers()
     }
 
-    func setupTabBarViewControllers() {
+   private func setupTabBarViewControllers() {
 
         let photosController = UINavigationController(rootViewController: PhotosViewController())
         photosController.tabBarItem = UITabBarItem(title: "Медиатека",

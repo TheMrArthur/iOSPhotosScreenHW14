@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CellHeader: UICollectionReusableView {
+final class CellHeader: UICollectionReusableView {
 
     static let cellHeaderIdentifier = "cellHeader"
 
@@ -69,6 +69,13 @@ class CellHeader: UICollectionReusableView {
             separatorView.leadingAnchor.constraint(equalTo: leftTitle.leadingAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 0.8)
         ])
+    }
+
+    // MARK: - Configuration
+    
+    func configuration(headerLeftTitle: String, headerRightTitle: String?) {
+        leftTitle.text = headerLeftTitle
+        rightTitle.text = headerRightTitle
     }
 
     override func prepareForReuse() {

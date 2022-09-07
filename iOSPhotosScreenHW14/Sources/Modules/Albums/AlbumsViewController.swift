@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AlbumsViewController: UIViewController {
+final class AlbumsViewController: UIViewController {
     
-    var setupAlbumsController: Model?
+  private var setupAlbumsController: Model?
     
     // MARK: - UI Elements
     
@@ -54,8 +54,9 @@ class AlbumsViewController: UIViewController {
         ])
     }
     
-    func createLayout() -> UICollectionViewCompositionalLayout {
+    private func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { sectionIndex, _ in
+
             switch sectionIndex {
                 case 0:
                     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
