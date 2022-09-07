@@ -23,10 +23,8 @@ extension Model {
          Model(image: "photo5", textLabel: "Pinterest", numbersLabel: "5"),
          Model(image: "photo6", textLabel: "InShot", numbersLabel: "1")],
 
-        [Model(image: "photo7", textLabel: "Nature", numbersLabel: "37"),
-         Model(image: "photo8", textLabel: "Разное", numbersLabel: "240"),
-         Model(image: "photo9", textLabel: "Авто", numbersLabel: "317"),
-         Model(image: "photo10", textLabel: "Питомцы", numbersLabel: "53")],
+        [Model(image: "photo7", textLabel: "Люди", numbersLabel: "37"),
+         Model(image: "photo8", textLabel: "Места", numbersLabel: "240")],
 
         [Model(image: "video", textLabel: "Видео", numbersLabel: "67"),
          Model(image: "slowmo", textLabel: "Замедленно", numbersLabel: "1"),

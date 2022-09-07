@@ -13,12 +13,12 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         return Model.albumsModel.count
     }
     
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Model.albumsModel[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         switch indexPath.section {
             case 0, 1:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BigImageCell.bigImageCellIdentifier, for: indexPath) as? BigImageCell else {
@@ -37,7 +37,7 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
                 return cell
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CellHeader.cellHeaderIdentifier, for: indexPath) as? CellHeader else {
             return UICollectionReusableView()
@@ -46,7 +46,7 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             case 0:
                 header.configuration(headerLeftTitle: "Мои альбомы", headerRightTitle: "Все")
             case 1:
-                header.configuration(headerLeftTitle: "Общие альбомы", headerRightTitle: nil)
+                header.configuration(headerLeftTitle: "Люди и места", headerRightTitle: nil)
             case 2:
                 header.configuration(headerLeftTitle: "Типы медиафайлов", headerRightTitle: nil)
             case 3:

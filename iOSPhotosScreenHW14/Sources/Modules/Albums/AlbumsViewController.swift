@@ -9,7 +9,7 @@ import UIKit
 
 final class AlbumsViewController: UIViewController {
     
-  private var setupAlbumsController: Model?
+    private var setupAlbumsController: Model?
     
     // MARK: - UI Elements
     
@@ -56,7 +56,7 @@ final class AlbumsViewController: UIViewController {
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { sectionIndex, _ in
-
+            
             switch sectionIndex {
                 case 0:
                     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
@@ -81,16 +81,16 @@ final class AlbumsViewController: UIViewController {
                                                                           bottom: 10,
                                                                           trailing: 15)
                     layoutSection.orthogonalScrollingBehavior = .continuous
-
+                    
                     let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.06),
                                                                          heightDimension: .estimated(40))
-
+                    
                     let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                         layoutSize: layoutSectionHeaderSize,
                         elementKind: UICollectionView.elementKindSectionHeader,
                         alignment: .top)
                     layoutSectionHeader.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0)
-
+                    
                     layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                     return layoutSection
                     
@@ -117,10 +117,10 @@ final class AlbumsViewController: UIViewController {
                                                                           bottom: 10,
                                                                           trailing: 15)
                     layoutSection.orthogonalScrollingBehavior = .continuous
-
+                    
                     let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.06),
                                                                          heightDimension: .estimated(40))
-
+                    
                     let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                         layoutSize: layoutSectionHeaderSize,
                         elementKind: UICollectionView.elementKindSectionHeader,
@@ -151,10 +151,10 @@ final class AlbumsViewController: UIViewController {
                                                                           leading: 5,
                                                                           bottom: 30,
                                                                           trailing: 10)
-
+                    
                     let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.06),
                                                                          heightDimension: .estimated(40))
-
+                    
                     let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                         layoutSize: layoutSectionHeaderSize,
                         elementKind: UICollectionView.elementKindSectionHeader,
