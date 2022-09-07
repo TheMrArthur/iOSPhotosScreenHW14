@@ -51,6 +51,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC31989A28C89D5000FD1F2B /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EC54821528C797E300F35FA2 /* TabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		EC31989B28C89D5F00FD1F2B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EC54820C28C71DE100F35FA2 /* PhotosViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		EC31989C28C89D7400FD1F2B /* ForYou */ = {
+			isa = PBXGroup;
+			children = (
+				EC54820E28C71DFE00F35FA2 /* ForYouViewController.swift */,
+			);
+			path = ForYou;
+			sourceTree = "<group>";
+		};
+		EC31989D28C89D7E00FD1F2B /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				EC5481F728C716EF00F35FA2 /* AlbumsViewController.swift */,
+				EC54821D28C7EBB100F35FA2 /* AlbumsViewController+Extension.swift */,
+				EC54821B28C7E36200F35FA2 /* BigImageCell.swift */,
+				EC54821F28C7FC3E00F35FA2 /* TableCell.swift */,
+				EC54822128C80C3800F35FA2 /* CellHeader.swift */,
+				EC54821928C7B19800F35FA2 /* AlbumsModel.swift */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		EC31989E28C89DD900FD1F2B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EC54821028C71E1600F35FA2 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		EC5481E728C716EF00F35FA2 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				EC54820A28C718E200F35FA2 /* App */,
-				EC54820B28C71A1E00F35FA2 /* Controllers */,
-				EC54821728C7AFF900F35FA2 /* Cell */,
-				EC54821828C7B01900F35FA2 /* Model */,
+				EC54820B28C71A1E00F35FA2 /* Modules */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -113,35 +156,16 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		EC54820B28C71A1E00F35FA2 /* Controllers */ = {
+		EC54820B28C71A1E00F35FA2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				EC54821528C797E300F35FA2 /* TabBarController.swift */,
-				EC54820C28C71DE100F35FA2 /* PhotosViewController.swift */,
-				EC54820E28C71DFE00F35FA2 /* ForYouViewController.swift */,
-				EC5481F728C716EF00F35FA2 /* AlbumsViewController.swift */,
-				EC54821D28C7EBB100F35FA2 /* AlbumsViewController+Extension.swift */,
-				EC54821028C71E1600F35FA2 /* SearchViewController.swift */,
+				EC31989A28C89D5000FD1F2B /* MainTabBar */,
+				EC31989B28C89D5F00FD1F2B /* Library */,
+				EC31989D28C89D7E00FD1F2B /* Albums */,
+				EC31989C28C89D7400FD1F2B /* ForYou */,
+				EC31989E28C89DD900FD1F2B /* Search */,
 			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		EC54821728C7AFF900F35FA2 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				EC54821B28C7E36200F35FA2 /* BigImageCell.swift */,
-				EC54821F28C7FC3E00F35FA2 /* TableCell.swift */,
-				EC54822128C80C3800F35FA2 /* CellHeader.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		EC54821828C7B01900F35FA2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EC54821928C7B19800F35FA2 /* AlbumsModel.swift */,
-			);
-			path = Model;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

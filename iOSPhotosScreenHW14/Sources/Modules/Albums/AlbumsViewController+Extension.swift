@@ -13,25 +13,25 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         return Model.albumsModel.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Model.albumsModel[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         switch indexPath.section {
             case 0, 1:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BigImageCell.bigImageCellIdentifier, for: indexPath) as? BigImageCell else {
                     return UICollectionViewCell()
                 }
-                cell.setupCell = Model.albumsModel[indexPath.section][indexPath.item]
+                cell.configuration(model: Model.albumsModel[indexPath.section][indexPath.item])
                 return cell
                 
             default:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TableCell.tableCellIdentifier, for: indexPath) as? TableCell else {
                     return UICollectionViewCell()
                 }
-                cell.setupCell = Model.albumsModel[indexPath.section][indexPath.item]
+                cell.configuration(model: Model.albumsModel[indexPath.section][indexPath.item])
                 let isLastCell = indexPath.row == (Model.albumsModel[indexPath.section].count - 1) ? true : false
                 cell.hidingSeparator(isHide: isLastCell)
                 return cell
@@ -44,16 +44,15 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         }
         switch indexPath.section {
             case 0:
-                header.leftTitle.text = "Мои альбомы"
-                header.rightTitle.text = "Все"
+                header.configuration(headerLeftTitle: "Мои альбомы", headerRightTitle: "Все")
             case 1:
-                header.leftTitle.text = "Общие альбомы"
+                header.configuration(headerLeftTitle: "Общие альбомы", headerRightTitle: nil)
             case 2:
-                header.leftTitle.text = "Типы медиафайлов"
+                header.configuration(headerLeftTitle: "Типы медиафайлов", headerRightTitle: nil)
             case 3:
-                header.leftTitle.text = "Другое"
+                header.configuration(headerLeftTitle: "Другое", headerRightTitle: nil)
             default:
-                header.leftTitle.text = "Чейта за секция?"
+                header.configuration(headerLeftTitle: "Title", headerRightTitle: "title")
         }
         return header
     }

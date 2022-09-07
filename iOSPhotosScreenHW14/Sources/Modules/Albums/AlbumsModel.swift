@@ -11,12 +11,13 @@ struct Model {
     var image: String
     var textLabel: String
     var numbersLabel: String
+    var bottomIcon: String?
 }
 
 extension Model {
     static var albumsModel = [
         [Model(image: "photo1", textLabel: "Недавние", numbersLabel: "740"),
-         Model(image: "photo2", textLabel: "Избранное", numbersLabel: "18"),
+         Model(image: "photo2", textLabel: "Избранное", numbersLabel: "18", bottomIcon: "heart.fill"),
          Model(image: "photo3", textLabel: "TikTok", numbersLabel: "3"),
          Model(image: "photo4", textLabel: "WhatsApp", numbersLabel: "149"),
          Model(image: "photo5", textLabel: "Pinterest", numbersLabel: "5"),

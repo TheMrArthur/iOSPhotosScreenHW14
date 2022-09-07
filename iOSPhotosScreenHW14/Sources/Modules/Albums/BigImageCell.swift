@@ -7,18 +7,10 @@
 
 import UIKit
 
-class BigImageCell: UICollectionViewCell {
+final class BigImageCell: UICollectionViewCell {
 
     static let bigImageCellIdentifier = "bigImageCell"
-
-    var setupCell: Model? {
-        didSet {
-            image.image = UIImage(named: setupCell?.image ?? "rectangle.on.rectangle")
-            textLabel.text = setupCell?.textLabel
-            numbersLabel.text = setupCell?.numbersLabel
-        }
-    }
-
+    
     // MARK: - UI Elements
 
     private lazy var image: UIImageView = {
@@ -29,16 +21,23 @@ class BigImageCell: UICollectionViewCell {
         return image
     }()
 
-    lazy var textLabel: UILabel = {
+    private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
         return textLabel
     }()
 
-    lazy var numbersLabel: UILabel = {
+    private lazy var numbersLabel: UILabel = {
         let numbersLabel = UILabel()
         numbersLabel.textColor = .systemGray
         return numbersLabel
     }()
+
+    private lazy var bottomIcon: UIImageView = {
+        let bottomIcon = UIImageView()
+        bottomIcon.tintColor = .white
+        return bottomIcon
+    }()
+
 
     // MARK: - Lifecycle
 
@@ -59,12 +58,14 @@ class BigImageCell: UICollectionViewCell {
         addSubview(image)
         addSubview(textLabel)
         addSubview(numbersLabel)
+        addSubview(bottomIcon)
     }
 
     private func setupLayout() {
         image.translatesAutoresizingMaskIntoConstraints = false
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         numbersLabel.translatesAutoresizingMaskIntoConstraints = false
+        bottomIcon.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             numbersLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -80,12 +81,28 @@ class BigImageCell: UICollectionViewCell {
             image.topAnchor.constraint(equalTo: topAnchor),
             image.leadingAnchor.constraint(equalTo: leadingAnchor),
             image.trailingAnchor.constraint(equalTo: trailingAnchor),
-            image.bottomAnchor.constraint(equalTo: textLabel.topAnchor)
+            image.bottomAnchor.constraint(equalTo: textLabel.topAnchor),
+
+            bottomIcon.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: -5),
+            bottomIcon.leadingAnchor.constraint(equalTo: image.leadingAnchor, constant: 5),
+            bottomIcon.widthAnchor.constraint(equalTo: image.widthAnchor, multiplier: 0.12),
+            bottomIcon.heightAnchor.constraint(equalTo: image.widthAnchor, multiplier: 0.12)
         ])
+    }
+
+    // MARK: - Configuration
+
+    func configuration(model: Model) {
+        image.image = UIImage(named: model.image)
+        textLabel.text = model.textLabel
+        numbersLabel.text = model.numbersLabel
+        bottomIcon.image = UIImage(systemName: model.bottomIcon ?? "")
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
         image.image = nil
+        textLabel.text = nil
+        numbersLabel.text = nil
     }
 }
